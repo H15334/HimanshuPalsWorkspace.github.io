@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Himanshu Pal - Advanced Portfolio</title>
+
+    <!-- Google Fonts for Better Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+    <!-- Animation Library for Smooth Animations -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+    <style>
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+            background-color: #181818;
+            color: #fff;
+            height: 100%;
+            overflow-x: hidden;
+        }
+
+        /* Advanced Header and Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            padding: 20px 0;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        header.scrolled {
+            background-color: rgba(0, 0, 0, 1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            font-weight: 500;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #f39c12;
+            transform: translateY(-3px);
+        }
+
+        /* Parallax Section */
+        .parallax {
+            background-image: url('your-background-image.jpg');
+            height: 100vh;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .parallax h1 {
+            font-size: 64px;
+            font-weight: 700;
+            animation: fadeInDown 2s ease;
+        }
+
+        /* Scroll Triggered Animations */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease-out;
+        }
+
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Smooth Transition on Scroll */
+        .container {
+            max-width: 1200px;
+            margin: 100px auto;
+            padding: 50px 20px;
+        }
+
+        /* Advanced Game Cards */
+        .game-card {
+            display: inline-block;
+            width: 300px;
+            height: 200px;
+            margin: 20px;
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px); /* Glassmorphism Effect */
+        }
+
+        .game-card:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 30px rgba(255, 255, 255, 0.5);
+        }
+
+        .game-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.7);
+        }
+
+        /* Buttons with Hover Effects */
+        .btn {
+            background-color: #f39c12;
+            border: none;
+            padding: 15px 30px;
+            color: #fff;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 1px;
+            border-radius: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #d35400;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .btn:active {
+            transform: scale(0.95);
+        }
+
+        /* Section Headers */
+        h2 {
+            font-size: 36px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 40px;
+            animation: fadeInUp 1.5s ease;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #aaa;
+        }
+
+        /* Scroll Indicator */
+        .scroll-indicator {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #fff;
+            font-size: 20px;
+            animation: bounce 2s infinite;
+        }
+
+        .scroll-indicator span {
+            display: inline-block;
+            transform: translateY(0);
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Advanced Header with Smooth Scrolling -->
+    <header id="navbar">
+        <nav>
+            <a href="#games-section">Games</a>
+            <a href="#templates-section">Excel Templates (WIP)</a>
+            <a href="#books-section">Books (WIP)</a>
+            <a href="#mobile-games-section">Mobile Games (WIP)</a>
+            <a href="#about-section">About</a>
+        </nav>
+    </header>
+
+    <!-- Parallax Section with Fade-in Animation -->
+    <section class="parallax">
+        <h1 class="animate__animated animate__fadeInDown">Welcome to Himanshu Pal's World</h1>
+    </section>
+
+    <!-- Games Section with Download Links -->
+    <section id="games-section" class="container">
+        <h2>Games</h2>
+
+        <!-- Game 1 Download -->
+        <div class="game-card animate-on-scroll">
+            <a href="path-to-your-game-1.exe" download="Game1App">
+                <img src="game1-thumbnail.jpg" alt="Game 1">
+                <h3>Download Game 1</h3>
+            </a>
+        </div>
+
+        <!-- Game 2 Download -->
+        <div class="game-card animate-on-scroll">
+            <a href="path-to-your-game-2.exe" download="Game2App">
+                <img src="game2-thumbnail.jpg" alt="Game 2">
+                <h3>Download Game 2</h3>
+            </a>
+        </div>
+
+    </section>
+
+    <!-- Excel Templates Section (WIP) -->
+    <section id="templates-section" class="container">
+        <h2>Excel Templates (WIP)</h2>
+        <p>This section is a work in progress. Please check back later for updates!</p>
+    </section>
+
+    <!-- Books Section (WIP) -->
+    <section id="books-section" class="container">
+        <h2>Books (WIP)</h2>
+        <p>Work in progress. Stay tuned!</p>
+    </section>
+
+    <!-- Mobile Games Section (WIP) -->
+    <section id="mobile-games-section" class="container">
+        <h2>Mobile Games (WIP)</h2>
+        <p>Work in progress. Check back soon!</p>
+    </section>
+
+    <!-- About Section -->
+    <section id="about-section" class="container">
+        <h2>About Himanshu Pal</h2>
+        <p>Himanshu Pal is the creative mind behind all the games, templates, and books available on this site. Stay tuned for more exciting content.</p>
+    </section>
+
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator">
+        <span>↓ Scroll for more ↓</span>
+    </div>
+
+    <!-- JavaScript for Advanced Animations -->
+    <script>
+        // Sticky Navbar on Scroll
+        window.onscroll = function() {
+            var navbar = document.getElementById("navbar");
+            if (window.scrollY > 100) {
+                navbar.classList.add("scrolled");
+            } else {
+                navbar.classList.remove("scrolled");
+            }
+
+            // Trigger Animations on Scroll
+            document.querySelectorAll('.animate-on-scroll').forEach(el => {
+                if (isVisible(el)) {
+                    el.classList.add("visible");
+                }
+            });
+        };
+
+        function isVisible(el) {
+            var rect = el.getBoundingClientRect();
+            return rect.top < window.innerHeight && rect.bottom >= 0;
+        }
+
+        // Smooth Scroll Animation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
